@@ -1,6 +1,9 @@
 import React from 'react';
 import { StyleSheet, StatusBar, View } from 'react-native';
-import DrawerNavigator from './navigation/DrawerNavigator'
+import DrawerNavigator from './navigation/DrawerNavigator';
+import {createAppContainer, createDrawerNavigator} from "react-navigation";
+import HomeScreen from "./screens/HomeScreen";
+import VisiteurScreen from "./screens/VisiteurScreen";
 
 StatusBar.setHidden(true, 'slide');
 
