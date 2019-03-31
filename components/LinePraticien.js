@@ -32,9 +32,9 @@ class LinePraticien extends React.Component {
                 <Ionicons
                     style={GlobalStyle.IconView}
                     name="md-arrow-round-forward"
-                    size={25}
+                    size={30}
                     onPress={() => this.props.navigation.navigate(
-                                                'ResultsOneDepartment',
+                                                    'ResultsOneDepartment',
                                                 { code: this.props.department.code }
                                                 ) }
                 />

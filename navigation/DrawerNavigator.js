@@ -6,6 +6,7 @@ import HomeScreen from '../screens/HomeScreen'
 import PraticienDepartementsScreen from '../screens/PraticienDepartementsScreen'
 import VisiteurScreen from '../screens/VisiteurScreen';
 import ResultsOneDepartment from '../screens/ResultsOneDepartment'
+import OneCollaborateur from "../components/OneCollaborateur";
 
 const WIDTH = Dimensions.get('window').width;
 const DrawerConfig = {
@@ -19,19 +20,19 @@ const SwitchNavigator = createSwitchNavigator({
     },
     ResultsOneDepartment: {
         screen: ResultsOneDepartment
-    }
+    },
 });
 
 const DrawerNavigator = createDrawerNavigator(
     {
-        Praticiens: {
-            screen: SwitchNavigator,
-        },
         Visiteurs: {
             screen: VisiteurScreen
         },
         Accueil: {
             screen: HomeScreen,
+        },
+        Praticiens: {
+            screen: SwitchNavigator,
         },
     },
     DrawerConfig

@@ -1,10 +1,10 @@
 {
+  "packagerPort": 19001,
+  "packagerPid": 1596,
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 11148,
-  "expoServerNgrokUrl": "https://yy-pb8.anonymous.gsbapplicationmobile.exp.direct",
-  "packagerNgrokUrl": "https://packager.yy-pb8.anonymous.gsbapplicationmobile.exp.direct",
-  "ngrokPid": 704,
+  "expoServerNgrokUrl": "https://yy-pb8.leandre.gsbapplicationmobile.exp.direct",
+  "packagerNgrokUrl": "https://packager.yy-pb8.leandre.gsbapplicationmobile.exp.direct",
+  "ngrokPid": 10420,
   "webpackServerPort": null
 }

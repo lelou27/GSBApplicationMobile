@@ -2,6 +2,8 @@ import React from 'react';
 import {View, Text, ActivityIndicator, ListView } from 'react-native';
 import axios from 'axios';
 
+import config from '../config/config';
+
 import MenuButton from '../components/MenuButton';
 import GlobalStyle from '../assets/Style';
 import LinePraticien from '../components/LinePraticien';
@@ -17,13 +19,27 @@ export default class PraticienDepartementsScreen extends React.Component {
     }
 
     fetchDepartments() {
-        axios.get('http://192.168.43.66:8888/public/departements')
+        axios.get(`${config.apiUrl}/departements`)
             .then((response) => {
                 this.setState({report: response.data});
             })
             .catch((error) => {
                 this.setState({report: 'errCode'});
             })
+    }
+
+    showDepartments(ds) {
+        return (
+            <View>
+                <MenuButton navigation={this.props.navigation} />
+
+                <ListView
+                    style={GlobalStyle.listViewPraticien}
+                    dataSource={ds.cloneWithRows(this.state.report)}
+                    renderRow={ (row, j, k) => <LinePraticien department={row} /> }
+                />
+            </View>
+        );
     }
 
     loadingPage() {
@@ -46,20 +62,6 @@ export default class PraticienDepartementsScreen extends React.Component {
         )
     }
 
-    showDepartments(ds) {
-        return (
-            <View>
-                <MenuButton navigation={this.props.navigation} />
-
-                <ListView
-                    style={GlobalStyle.listViewPraticien}
-                    dataSource={ds.cloneWithRows(this.state.report)}
-                    renderRow={ (row, j, k) => <LinePraticien department={row} /> }
-                />
-            </View>
-        );
-    }
-
     render() {
         if (this.state.report == null) {
             return (
@@ -70,7 +72,7 @@ export default class PraticienDepartementsScreen extends React.Component {
                 this.displayError()
             )
         } else {
-            const ds = new ListView.DataSource({rowHasChanged: (r1,r2) => r1 !== r2})
+            const ds = new ListView.DataSource({rowHasChanged: (r1,r2) => r1 !== r2});
 
             return (
                 this.showDepartments(ds)
