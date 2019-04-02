@@ -61,7 +61,6 @@ export default class OneCollaborateur extends React.Component {
     }
 
     displayPage() {
-        Moment.locale('fr');
         return (
             <View>
                 <MenuButton navigation={this.props.navigation} />

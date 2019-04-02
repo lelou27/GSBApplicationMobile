@@ -12,7 +12,7 @@
     "orientation": "portrait",
     "icon": "./assets/logo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -23,7 +23,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "com.leandreGuegan.GSBApplication"
+    },
+    "android": {
+      "package": "com.leandreGuegan.GSBApplication"
+    },
+    "githubUrl": "https://github.com/lelou27/GSBApplicationMobile"
   }
 }
