@@ -1,5 +1,5 @@
 const config = {
-    apiUrl: 'http://192.168.43.66:8888/public'
+    apiUrl: 'http://apigsbapplicationmobile.alwaysdata.net'
 };
 
 export default config;

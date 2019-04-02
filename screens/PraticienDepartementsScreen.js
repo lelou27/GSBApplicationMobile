@@ -79,6 +79,4 @@ export default class PraticienDepartementsScreen extends React.Component {
             )
         }
     }
-
-
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ListView, ActivityIndicator} from 'react-native';
+import {View, ListView, ActivityIndicator, Text} from 'react-native';
 import axios from 'axios';
 
 import config from '../config/config';

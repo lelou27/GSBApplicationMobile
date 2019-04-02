@@ -36,6 +36,8 @@ class ResultsOneDepartment extends React.Component {
                 .catch((error) => {
                     this.setState({ praticiens: 'errCode'});
                 })
+        } else {
+            this.setState({praticiens: 'errCode'});
         }
     }
 

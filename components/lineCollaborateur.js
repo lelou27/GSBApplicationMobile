@@ -4,7 +4,7 @@ import GlobalStyle from "../assets/Style";
 import { Ionicons } from '@expo/vector-icons'
 import {withNavigation} from "react-navigation";
 
-export default class lineCollaborateur extends React.Component {
+class lineCollaborateur extends React.Component {
     nomPrenom() {
         return (
             <Text>{ this.props.collaborateur.COL_PRENOM } { this.props.collaborateur.COL_NOM }</Text>
@@ -31,14 +31,14 @@ export default class lineCollaborateur extends React.Component {
                     name="md-information-circle-outline"
                     size={30}
                     color="#03A9F4"
-                    onPress={() => console.log('ok')
-                    //     this.props.navigation.navigate(
-                    //     'OneVisiteur',
-                    //     { matricule: this.props.collaborateur.COL_MATRICULE }
-                    // )
-                    }
+                    onPress={() => this.props.navigation.navigate(
+                        'OneVisiteur',
+                        { matricule: this.props.collaborateur.COL_MATRICULE }
+                    )}
                 />
             </View>
         );
     }
 }
+
+export default withNavigation(lineCollaborateur);

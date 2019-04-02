@@ -23,16 +23,25 @@ const SwitchNavigator = createSwitchNavigator({
     },
 });
 
+const VisiteurSwitchNavigator = createSwitchNavigator({
+    Visiteurs: {
+        screen: VisiteurScreen
+    },
+    OneVisiteur: {
+        screen: OneCollaborateur
+    }
+});
+
 const DrawerNavigator = createDrawerNavigator(
     {
-        Visiteurs: {
-            screen: VisiteurScreen
-        },
         Accueil: {
             screen: HomeScreen,
         },
         Praticiens: {
             screen: SwitchNavigator,
+        },
+        Visiteurs: {
+            screen: VisiteurSwitchNavigator
         },
     },
     DrawerConfig

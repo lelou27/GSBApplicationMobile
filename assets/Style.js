@@ -49,4 +49,8 @@ export default StyleSheet.create({
     oneTextDepartement: {
         padding: 5
     },
+    underViewOneCollab: {
+        padding: 5,
+        marginHorizontal: 5
+    }
 })

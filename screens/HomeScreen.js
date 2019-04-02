@@ -12,7 +12,7 @@ export default class HomeScreen extends React.Component {
                 <MenuButton navigation={this.props.navigation} />
                 <Text style={GlobalStyle.text}>
                     Bienvenue dans l'application mobile GSB. Dans cette application,
-                    vous pourrez voir les praticiens et leurs départements !
+                    vous pourrez voir les praticiens classés par département, ainsi que des informaations sur les collaborateurs de GSB.
                 </Text>
             </View>
         );
