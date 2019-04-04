@@ -4,19 +4,32 @@ import GlobalStyle from "../assets/Style";
 import { Ionicons } from '@expo/vector-icons'
 import {withNavigation} from "react-navigation";
 
+// Classe permettant d'afficher une ligne de collaborateur
 class lineCollaborateur extends React.Component {
+    /**
+     * Affichage du nom / prénom du collaborateur
+     * @returns JSX affichage
+     */
     nomPrenom() {
         return (
             <Text>{ this.props.collaborateur.COL_PRENOM } { this.props.collaborateur.COL_NOM }</Text>
         )
     }
 
+    /**
+     * Affichage du labo
+     * @returns JSX affichage
+     */
     labo() {
         return (
             <Text>Laboratoire : { this.props.collaborateur.LAB_NOM }</Text>
         )
     }
 
+    /**
+     * Rendu de la vue
+     * @returns JSX
+     */
     render() {
         return (
             <View style={GlobalStyle.viewLineDepartmentPraticien}>
@@ -40,5 +53,5 @@ class lineCollaborateur extends React.Component {
         );
     }
 }
-
+// Permet d'utiliser la navigation pour this.props.navigation
 export default withNavigation(lineCollaborateur);

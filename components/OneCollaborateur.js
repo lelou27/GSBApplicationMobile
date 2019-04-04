@@ -8,16 +8,27 @@ import MenuButton from "./MenuButton";
 import Config from '../config/config';
 import Moment from 'moment';
 
+/**
+ * Classe permettant de rendre la vue d'un collaborateur
+ */
 export default class OneCollaborateur extends React.Component {
+    /**
+     * Constructeur de l'application
+     * @param props les propriétés
+     */
     constructor(props) {
         super(props);
-
+        // Déclaration du cillaborateur
         this.state = {
             collaborateur: null
         }
+        // Récupération d'un collaborateur
         this.fetchCollaborateur();
     }
 
+    /**
+     * Récupération d'un collaborateur via API et SET du collaborateur
+     */
     fetchCollaborateur() {
         const { navigation } = this.props;
         let matricule = navigation.getParam('matricule', 'errCode');
@@ -35,10 +46,17 @@ export default class OneCollaborateur extends React.Component {
         }
     }
 
+    /**
+     * Appui sur retour
+     */
     pressReturn() {
         this.props.navigation.navigate('Visiteurs');
     }
 
+    /**
+     * Page de chargement
+     * @returns JSX
+     */
     loadingPage() {
         return (
             <View style={GlobalStyle.container}>
@@ -48,6 +66,10 @@ export default class OneCollaborateur extends React.Component {
         )
     }
 
+    /**
+     * Rendu des erreurs
+     * @returns JSX
+     */
     displayError() {
         return (
             <View style={GlobalStyle.container}>
@@ -60,6 +82,10 @@ export default class OneCollaborateur extends React.Component {
         )
     }
 
+    /**
+     * Rendu de la page
+     * @returns JSX
+     */
     displayPage() {
         return (
             <View>
@@ -77,6 +103,10 @@ export default class OneCollaborateur extends React.Component {
         )
     }
 
+    /**
+     * Rendu de la vue
+     * @returns {JSX}
+     */
     render() {
         if (this.state.collaborateur === null) {
             return (
@@ -94,6 +124,7 @@ export default class OneCollaborateur extends React.Component {
     }
 }
 
+// Prototupage du matricule
 OneCollaborateur.propTypes = {
     matricule: PropTypes.string
 }

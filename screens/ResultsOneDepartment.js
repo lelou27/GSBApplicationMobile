@@ -9,8 +9,15 @@ import GlobalStyle from '../assets/Style';
 import MenuButton from "../components/MenuButton";
 import LineOneDepartmentPraticien from '../components/LineOneDepartmentPraticien';
 
+/**
+ * Show all praticiens from one department
+ */
 class ResultsOneDepartment extends React.Component {
 
+    /**
+     * Constructor for declare state and set state
+     * @param props Properties
+     */
     constructor(props) {
         super(props);
 
@@ -20,11 +27,16 @@ class ResultsOneDepartment extends React.Component {
         this.fetchPraticiens();
     }
 
+    /**
+     * On press on return button, Go to praticiens
+     */
     pressReturn() {
         this.props.navigation.navigate('Praticiens');
     }
 
-
+    /**
+     * Get praticiens from API / Set praticiens state
+     */
     fetchPraticiens() {
         const { navigation } = this.props;
         let codeDepartment = navigation.getParam('code', 'errCode');
@@ -41,6 +53,11 @@ class ResultsOneDepartment extends React.Component {
         }
     }
 
+    /**
+     * Render for one department
+     * @param ds DataSource
+     * @returns JSX render for page
+     */
     showOneDepartment(ds) {
         return (
             <View>
@@ -56,6 +73,10 @@ class ResultsOneDepartment extends React.Component {
         )
     }
 
+    /**
+     * Show activity indicator for loading datas
+     * @returns JSX
+     */
     loadingPage() {
         return (
             <View style={GlobalStyle.container}>
@@ -65,6 +86,10 @@ class ResultsOneDepartment extends React.Component {
         )
     }
 
+    /**
+     * Show error
+     * @returns JSX
+     */
     displayError() {
         return (
             <View style={GlobalStyle.container}>
@@ -76,6 +101,10 @@ class ResultsOneDepartment extends React.Component {
         )
     }
 
+    /**
+     * Render for page
+     * @returns {JSX}
+     */
     render() {
         if (this.state.praticiens == null) {
             return (
@@ -95,4 +124,5 @@ class ResultsOneDepartment extends React.Component {
     }
 }
 
+// Export with navigation page
 export default withNavigation(ResultsOneDepartment);

@@ -3,7 +3,14 @@ import { Ionicons } from '@expo/vector-icons'
 
 import GlobalStyle from '../assets/Style'
 
+/**
+ * Classe rendant le bouton de menu
+ */
 export default class MenuButton extends React.Component {
+    /**
+     * Rendu du bouton
+     * @returns JSX
+     */
     render() {
         return (
             <Ionicons

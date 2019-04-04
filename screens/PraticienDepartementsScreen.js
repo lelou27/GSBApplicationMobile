@@ -8,8 +8,15 @@ import MenuButton from '../components/MenuButton';
 import GlobalStyle from '../assets/Style';
 import LinePraticien from '../components/LinePraticien';
 
+/**
+ * All departments for praticiens
+ */
 export default class PraticienDepartementsScreen extends React.Component {
 
+    /**
+     * Constructor
+     * @param props properties
+     */
     constructor(props) {
         super(props);
         this.state = {
@@ -18,6 +25,9 @@ export default class PraticienDepartementsScreen extends React.Component {
         this.fetchDepartments();
     }
 
+    /**
+     * Get departments from API, set state report
+     */
     fetchDepartments() {
         axios.get(`${config.apiUrl}/departements`)
             .then((response) => {
@@ -28,6 +38,11 @@ export default class PraticienDepartementsScreen extends React.Component {
             })
     }
 
+    /**
+     * Return view from praticien
+     * @param ds DataSource
+     * @returns JSX
+     */
     showDepartments(ds) {
         return (
             <View>
@@ -42,6 +57,10 @@ export default class PraticienDepartementsScreen extends React.Component {
         );
     }
 
+    /**
+     * Render for loading
+     * @returns JSX
+     */
     loadingPage() {
         return (
             <View style={GlobalStyle.container}>
@@ -51,6 +70,10 @@ export default class PraticienDepartementsScreen extends React.Component {
         )
     }
 
+    /**
+     * Display the errors
+     * @returns JSX
+     */
     displayError() {
         return (
             <View style={GlobalStyle.container}>
@@ -62,6 +85,10 @@ export default class PraticienDepartementsScreen extends React.Component {
         )
     }
 
+    /**
+     * Render of page
+     * @returns {JSX}
+     */
     render() {
         if (this.state.report == null) {
             return (

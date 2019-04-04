@@ -8,8 +8,15 @@ import GlobalStyle from '../assets/Style';
 import MenuButton from '../components/MenuButton';
 import LineCollaborateur  from '../components/lineCollaborateur';
 
+/**
+ * Display all collaborators
+ */
 export default class VisiteurScreen extends React.Component {
 
+    /**
+     * Constructor / Declare and set state collaborateurs
+     * @param props Properties
+     */
     constructor(props) {
         super(props);
 
@@ -19,6 +26,9 @@ export default class VisiteurScreen extends React.Component {
         this.fetchCollaborateurs();
     }
 
+    /**
+     * Get all collaborateurs from API
+     */
     fetchCollaborateurs() {
         axios.get(`${config.apiUrl}/collaborateurs`)
             .then((response) => {
@@ -29,6 +39,11 @@ export default class VisiteurScreen extends React.Component {
             })
     }
 
+    /**
+     * Render for page
+     * @param ds DataSource
+     * @returns JSX
+     */
     displayPage(ds) {
         return (
             <View>
@@ -43,6 +58,10 @@ export default class VisiteurScreen extends React.Component {
         )
     }
 
+    /**
+     * Loading from datas
+     * @returns JSX
+     */
     loadingPage() {
         return (
             <View style={GlobalStyle.container}>
@@ -52,6 +71,10 @@ export default class VisiteurScreen extends React.Component {
         )
     }
 
+    /**
+     * Render errors page
+     * @returns JSX
+     */
     displayError() {
         return (
             <View style={GlobalStyle.container}>
@@ -63,6 +86,10 @@ export default class VisiteurScreen extends React.Component {
         )
     }
 
+    /**
+     * Render for this page
+     * @returns {JSX}
+     */
     render() {
         if (this.state.collaborateurs === null) {
             return (
@@ -80,5 +107,4 @@ export default class VisiteurScreen extends React.Component {
             )
         }
     }
-
 }

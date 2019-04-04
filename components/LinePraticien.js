@@ -7,22 +7,34 @@ import GlobalStyle from '../assets/Style';
 
 import { withNavigation } from 'react-navigation';
 
-
-
+/**
+ * Classe permettant d'afficher une ligne de département
+ */
 class LinePraticien extends React.Component {
-
+    /**
+     * Affichage du département (code)
+     * @returns JSX
+     */
     code() {
         return (
             <Text>{ this.props.department.code }</Text>
         )
     }
 
+    /**
+     * Affichage du département (nom)
+     * @returns JSX
+     */
     nom() {
         return (
             <Text>{ this.props.department.nom }</Text>
         )
     }
 
+    /**
+     * Rendu à la vue
+     * @returns JSX
+     */
     render() {
         return (
             <View style={GlobalStyle.linePraticien}>
@@ -43,9 +55,9 @@ class LinePraticien extends React.Component {
 
     }
 }
-
+// Prototypage de l'objet LinePraticien
 LinePraticien.propTypes = {
     department: PropTypes.object
 }
-
+// Export avec navigation
 export default withNavigation(LinePraticien);

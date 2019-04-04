@@ -5,7 +5,14 @@ import GlobalStyle from '../assets/Style'
 
 import MenuButton from '../components/MenuButton'
 
+/**
+ * Home page
+ */
 export default class HomeScreen extends React.Component {
+    /**
+     * Render view to Home
+     * @returns JSX
+     */
     render() {
         return (
             <View style={GlobalStyle.container}>
